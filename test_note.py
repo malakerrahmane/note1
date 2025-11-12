@@ -23,3 +23,6 @@ def test_rate_14_returns_verygood():
 
 def test_rate_15_returns_verygood():
     assert rate_note(15) == "verygood"
+
+def test_rate_17_returns_excellent():
+    assert rate_note(17) == "excellent"
