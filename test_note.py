@@ -2,30 +2,31 @@ import pytest
 
 from note import rate_note
 
-@pytest.mark.parametrize("note", [8,7,9])
-def test_rate_note_unsuccessful(note):
-    assert rate_note(note) == "unsuccessful"
+import pytest
+from note import rate_note
 
-def test_rate_10_returns_acceptable():
-    assert rate_note(10) == "acceptable"
-
-def test_rate_12_returns_good():
-     assert rate_note(12) == "good"
-
-def test_rate_13_returns_good():
-    assert rate_note(13) == "good"
-
-def test_rate_11_returns_acceptable():
-    assert rate_note(11) == "acceptable"
-
-def test_rate_14_returns_verygood():
-    assert rate_note(14) == "verygood"
-
-def test_rate_15_returns_verygood():
-    assert rate_note(15) == "verygood"
-
-def test_rate_17_returns_excellent():
-    assert rate_note(17) == "excellent"
-
-def test_rate_20_returns_excellent():
-    assert rate_note(20) == "excellent"
+@pytest.mark.parametrize(
+    "note, expected",
+    [
+        (0, "unsuccessful"),
+        (1, "unsuccessful"),
+        (2, "unsuccessful"),
+        (3, "unsuccessful"),
+        (4, "unsuccessful"),
+        (5, "unsuccessful"),
+        (6, "unsuccessful"),
+        (7, "unsuccessful"),
+        (8, "unsuccessful"),
+        (9, "unsuccessful"),
+        (10, "acceptable"),
+        (11, "acceptable"),
+        (12, "good"),
+        (13, "good"),
+        (14, "verygood"),
+        (15, "verygood"),
+        (17, "excellent"),
+        (20, "excellent"),
+    ],
+)
+def test_rate_note(note, expected):
+    assert rate_note(note) == expected
