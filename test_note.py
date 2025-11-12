@@ -1,6 +1,8 @@
+import pytest
+
 def rate_note(param):
     pass
 
 
 def test_rate_note_is_callable():
-    rate_note(9
+    rate_note(9)
